@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Center,
   Container,
@@ -23,21 +24,29 @@ const Home: NextPage = () => {
 
   return (
     <Container>
-      <Stack align="center" justify="space-evenly" sx={{ minHeight: "60vh" }}>
+      <Stack align="center" justify="center" sx={{ minHeight: "60vh" }}>
         <Center>
           <Title order={1}>Dead Pixel Test</Title>
         </Center>
-        <Text
+        <Stack
+          spacing="sm"
           sx={{
+            textAlign: "center",
             "@media (min-width: 667px)": {
               width: "30rem",
             },
           }}
         >
-          On this site you can check for dead pixels! This is particulary useful
-          after you have bought a new monitor or after transporting your
-          monitor.
-        </Text>
+          <Text>
+            On this site, you can check for dead pixels! This is particularly
+            useful after you have bought a new monitor or after transporting
+            your monitor.
+          </Text>
+          <Title order={3}>What to look out for?</Title>
+          <Text>In the test, you will see a series of colors.</Text>
+          Look out for black pixels or bright pixels, both indicate a damaged
+          display.
+        </Stack>
         <Group>
           <Popover withArrow>
             <Popover.Target>
