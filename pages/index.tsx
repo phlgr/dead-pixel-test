@@ -9,10 +9,18 @@ import {
   Text,
   Title,
 } from "@mantine/core";
+import { useFullscreen } from "@mantine/hooks";
 import type { NextPage } from "next";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
+  const { toggle } = useFullscreen();
+  const router = useRouter();
+  const handleClick = () => {
+    toggle();
+    router.push("/test");
+  };
+
   return (
     <Container>
       <Stack align="center" justify="space-evenly" sx={{ minHeight: "60vh" }}>
@@ -48,9 +56,7 @@ const Home: NextPage = () => {
               </Stack>
             </Popover.Dropdown>
           </Popover>
-          <Link href="/test" passHref>
-            <Button>Start Test</Button>
-          </Link>
+          <Button onClick={handleClick}>Start Test</Button>
         </Group>
       </Stack>
     </Container>
