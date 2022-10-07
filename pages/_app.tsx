@@ -12,7 +12,6 @@ export default function App(props: AppProps) {
       <PlausibleProvider
         domain="deadpixelcheck.net"
         customDomain="https://apps.gartz.dev"
-        trackLocalhost
         selfHosted
         enabled
       >
@@ -23,6 +22,12 @@ export default function App(props: AppProps) {
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          />
+          <link
+            rel="icon"
+            type="image/svg+xml"
+            sizes="any"
+            href="/favicon.svg"
           />
           <meta name="theme-color" content="#000" />
           <meta
